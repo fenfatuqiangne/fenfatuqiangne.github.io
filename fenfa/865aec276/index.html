@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>比较开放的社交软件语言设计 - 图强</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  <meta name="keywords" content="奋发图强, 比较开放的社交软件">
+  <meta name="description" content=":🩱比较开放的社交软件💄　　中日两队开局都在相互适...">
+  <meta name="author" content="J奋发图强">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      loading: {
+        gif: '/images/theme/loading.gif',
+        lottie: ''
+      },
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: {
+          gif: '/images/theme/loading.gif',
+          lottie: ''
+        }
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="lock-screen">
+  <div class="loading" id="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">比较开放的社交软件语言设计</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/baidusitemap.xml " class="underline "> 百度地图</a>
+      </li><li class="menu-item">
+        <a href="/sitemap.xml " class="underline "> 网站地图</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">比较开放的社交软件语言设计</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>二月 21, 2023</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2400</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        
+          <p><p>:🩱比较开放的社交软件💄　　中日两队开局都在相互适应，双方均为全新阵容可谓遭遇战。大竹壱青精准拦网得手，日本队追成7平，中国队主帅吴胜叫暂停。日本队打吊结合，而且大竹壱青发球接连得分和破攻，日本队13比10领先，吴胜再叫暂停。张冠华拦网得手，张哲嘉快攻反击和拦网，中国队16比14反超。而后，藤中谦也换下樋口裕希，与富田将马搭档主攻线，随着富田将马进攻得手，日本队追成17平。俞元泰发球得分，中国队19比17领先，日本队主帅真保纲一郎叫暂停。然而，中国队发球依然强势，高点强攻威力十足，中国队以25比20取胜首局。💐📅</p></p>
+        
+        <p>  <strong><a target="_blank" rel="noopener" href="http://www.baidu.com/link?url=jHz8AcivB1yuSpc8sJSrNM3GjOR6OSPiMLRbBTcVT1O&wd">: 👉点&#x2F;此&#x2F;进&#x2F;入&#x2F;观&#x2F;看&#x2F;入&#x2F;口👈</a></strong></p>
+<hr>
+<p>郑氏想着小葱，想着板栗，想着葫芦，想了好久，终究是一声长叹，闭目睡去。　　《环球时报》记者通过中国长光卫星基于国产光学遥感卫星星座“吉林一号”所研发的卫星影像地理信息应用软件“共生地球”看到，花莲和平电厂确实有一座高耸的烟囱建筑，电厂在其官网介绍称，该厂位于花莲县秀林乡和平村和平工业区内，设计有两台66万千瓦燃煤火力发电机组，全厂装置容量132万千瓦。电厂的烟囱高达250米，烟囱上画有台湾少数民族图腾。这座电厂也据称是台湾东部目前发电量最大的电厂。　　赵珏差点笑出仙女叫。比较开放的社交软件🤘听了这话，几乎都疯了。中巴“海洋卫士-2”海上联合演习开幕胡钧见她这样，心情好过了些，便问道：林兄弟以前常为生计操心吗？林聪想了想道：差不多是吧。　　蓬佩奥24日在推特上发文@佩洛西并宣称，“南希，我要和你一起去。我在中国（大陆）被制裁了，但在热爱自由的台湾没有。在那里见！”　　此外，赵锡军还表示，要进一步利用大数据、实时监控等监测市场异常行为的技术手段，完善技术开发使其在防范内幕交易上发挥更有效的作用。🚿　　OMO英文全称为Open Market Operations，即公开市场操作。这一操作开始于1994年，具体做法有正回购和逆回购两种。央行的正回购就是央行向一级交易商卖出有价证券，收回资金；央行逆回购则是指央行向一级交易商购买有价证券，放出资金。通过正、逆回购，央行就能按需调节银行市场流动性，控制市场上的短期利率。　　<font cms-style="strong-Bold">据澳大利亚天空新闻网报道，乌克兰驻澳大利亚大使米罗什尼琴科（Vasyl Myroshnychenko）近日在澳大利亚的墨尔本市参加当地举行的乌克兰独立日庆典时，接受这家澳大利亚媒体的采访，并向澳大利亚政府提出了一个关于中国的建议。</font>　　据其介绍，该项目于2015年启动，当时测算的投资总额约为12亿元左右，但经征收调查统计，机电院约400多户被征收户中七成以上要求原地还建，据此确定了还建户型、面积以及还建具体位置。到2018年，市区两级土储部门重新签订征收协议，约定投资总额拆迁约为14亿元，协议同时约定，投资总额以最终审计金额为准。区土储最终提交的审计报告显示，机电院项目总拆迁补偿成本为18.23亿元，其中还建房回购款12.76亿元，货币补偿款5.47亿元。比较开放的社交软件🤎🤰　　李侗曾表示，与原始毒株相比，BF.7变异株更多表现为发烧、咳嗽、咽痛、鼻塞、流涕等，少数人可能有呕吐、腹泻等消化道症状，还有极少数会出现味觉嗅觉减退等。　　在讨论CNN这个连续出现三次的新闻事故时，不少推特网民一边描述着自己看CNN直播时亲眼目睹的错误全过程，一边还有不少人提到自己在美国各地遇到的“把泰国和台湾地区搞混”的各种笑话。明天，我就去帮你出气。　　去年9月，广州召开推动汽车产业高质量发展专题会议。这场由广州市委、市政府、市人大、市政协四套班子主要负责人出席的高规格会议上，点明“汽车产业是广州第一大产业”，并在此基础上进一步明确，“要坚定不移实施‘产业第一、制造业立市’战略，举全市之力做高做强做优做大汽车产业”。　　<strong>（三）促进农村安置区城乡融合发展。</strong>结合实施乡村振兴战略，扎实稳妥推进乡村建设，推动城镇基础设施和公共服务设施向有条件的农村安置区延伸覆盖。强化县城对农村安置区后续产业的辐射带动能力，推动特色产业可持续发展。深化要素市场化配置改革，促进要素更多向农村安置区集聚，形成人才、土地、资金汇聚的良性循环。捆着好。　　二、有序恢复体育培训活动。自2022年6月6日起，除丰台区全域、昌平区部分区域以及疫情风险处于中、高等级地区外，在本市连续7日无新增社会面病例的区，恢复体育培训机构成人类线下培训活动。自6月11日起，恢复青少年体育培训机构线下培训活动。各体育培训机构在严格落实本市疫情防控部署要求和测温扫码、查证和查验72小时内核酸阴性证明等常态化防控措施的基础上，按照75%限流开放。　　当前，我国即将达到城镇化的成熟期，大规模的城乡人口转移不会再持续出现，这意味着大规模的城市建设也将相应减少。在一些三四线城市，甚至出现了住房数量比人口数更高的怪现象；空置的高层住宅和写字楼大量出现。</p>
+<hr>
+<p>相关推荐：<br> :<a target="_blank" rel="noopener" href="https://sosoty.github.io/soso/fbd517ac2.html">比较开放的社交软件网友认为很特别</a><br> :<a target="_blank" rel="noopener" href="https://serocs.github.io/serocs/a409f5181.html">比较开放的社交软件大同小异</a><br> :<a target="_blank" rel="noopener" href="http://www.esrm.com.cn/me/index.php">比较开放的社交软件相当靠谱</a><br> :<a target="_blank" rel="noopener" href="https://yuhuata.github.io/yuhua/c1da4b23/">“和平-23”多国海上联演落幕</a><br> :<a target="_blank" rel="noopener" href="https://msoicke.github.io/msoc/d04516418.html">首批北归天鹅抵达北京官厅水库</a><br> :<a target="_blank" rel="noopener" href="https://arewho.github.io/who/27c715d.html">亚丁湾护航展现中国担当</a><br> :<a target="_blank" rel="noopener" href="http://m.t-vapes.com/contes.php">法国2022年货物贸易逆差创纪录</a><br> :<a target="_blank" rel="noopener" href="https://doubanee.github.io/douban/a8de2b63.html">（新春走基层）“非遗”闹大年 福建宁德景区景点火爆</a><br> :<a target="_blank" rel="noopener" href="https://yuhuata.github.io/yuhua/ba34efeb/">美国疫情纾困资金监管漏洞大</a><br> :<a target="_blank" rel="noopener" href="https://baidue.github.io/baidue/1ccf408ea.html">因员工在朋友圈秀订单 东方日升被出具警示函</a><br> :<a target="_blank" rel="noopener" href="https://weiruane.github.io/weiruan/58467218.html">乍得东部发生严重车祸致20死7伤</a><br> :<a target="_blank" rel="noopener" href="https://weiruane.github.io/weiruan/7ed1c89.html">首届“鲲鹏”奖获奖书系面世 见证中国科幻青春新力量</a></p>
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>J奋发图强</li>
+    <li><strong>本文链接：</strong><a href="https://fenfatuqiangne.github.io/fenfa/865aec276/index.html" title="https:&#x2F;&#x2F;fenfatuqiangne.github.io&#x2F;fenfa&#x2F;865aec276&#x2F;index.html">https:&#x2F;&#x2F;fenfatuqiangne.github.io&#x2F;fenfa&#x2F;865aec276&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E8%83%BD%E9%87%8F/" rel="tag">正能量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a href="/fenfa/493810746/"><i class="iconfont iconleft"></i>土耳其强震 视频画面展示叙利亚多地的生死救援相当靠谱</a>
+    <a href="/fenfa/a361fba85/">俄罗斯vodafonewifi仙踪林情感文摘<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
